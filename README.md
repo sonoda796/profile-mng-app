@@ -1,50 +1,31 @@
-# React + TypeScript + Vite
+# profile-mng-app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+家族、友人などのプロフィールを管理するアプリケーションです。<br>このプロジェクトは、**これまで経験のない技術をキャッチアップ** しながら  
+**モダンな環境で Web アプリケーションを開発・運用することを目的** として開発しました！  
 
-Currently, two official plugins are available:
+## 技術スタック
+### **フロントエンド**
+- **React.js**（コンポーネント指向の開発）
+- **TypeScript**（型安全なコード）
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### **クラウド & インフラ**
+- **AWS（S3, APIゲートウェイ, Lambda, RDS(MySQL)）** を活用し、**クラウド上でのWEBアプリケーション環境を一から構築**
 
-## Expanding the ESLint configuration
+## 力を入れた点
+- **最新の技術を活用**（React.js + AWS のモダンスタック）
+- **フロントエンドとクラウドの両面を学習**（開発から環境構築まで実践 / クライアント⇔サーバサイドの通信）   
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## デモサイト
+🔗 [Web アプリを見る](https://your-aws-deployed-app-url.com)  
 
-- Configure the top-level `parserOptions` property like this:
+## 学んだこと
+1. **React.js の設計パターン、開発手法**  
+Atomic Design / 状態管理 / ルーティング / CSSライブラリ活用による効率的な開発  
+クライアント⇔サーバサイド間のHTTP通信  
+TypeScriptによる型を意識した耐障害性の高いコード
+2. **AWS のインフラ構築**  
+webアプリケーション環境を一から構築  
+AWSベストプラクティスを意識したサービス選定  
+構築の容易さからサーバレスやマネージドサービスを選ばず、実際の現場に近い環境を意識。 
+VPC内でのサーバサイド⇔DBとの接続を行う中でネットワーク間の通信方法やセキュリティ対策等も学ぶことが出来た。
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
