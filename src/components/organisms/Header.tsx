@@ -1,6 +1,6 @@
-import { Box, Flex, Heading, Button } from "@chakra-ui/react";
+import { Box, Flex, Heading } from "@chakra-ui/react";
 import { memo, FC } from "react";
-import { useDisclosure, AddIcon } from "@chakra-ui/icons";
+import { useDisclosure } from "@chakra-ui/icons";
 import { useNavigate, Link } from "react-router-dom";
 
 import { MenuDrawer } from "../molecules/MenuDrawer";
@@ -50,7 +50,5 @@ export const Header: FC = memo(() => {
             </Flex >
             <MenuDrawer isOpen={isOpen} onClose={onClose} onClickTop={onClickTop} onClickProfileManagement={onClickUserManagement} onClickSetting={onClickSetting} />
         </>
-
-
     )
 });

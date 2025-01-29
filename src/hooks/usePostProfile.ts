@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
 import axios from "axios";
 
 import { Profile } from "../types/api/profile";
@@ -7,14 +7,12 @@ import { useProfile } from "./useProfile";
 export const usePostProfile = () => {
     // const { showMessage } = useMessage();
 
-    const [loading, setLoading] = useState(false);
     const { setChangedProfile } = useProfile();
 
     const postProfile = useCallback((props: Profile, onClose: () => void) => {
 
         const { id, name, nickName, groupName, age, birthDay, gender, address, email, favoriteFood, favoriteDrink, hobby } = props;
 
-        setLoading(true);
         axios.post('https://jd1kjojkwf.execute-api.ap-northeast-1.amazonaws.com/test/MySQLDBManager',
             {
                 "payload": {

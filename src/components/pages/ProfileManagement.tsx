@@ -16,7 +16,7 @@ export const ProfileManagement: FC = memo(() => {
     const [detailModalTitle, setDetailModalTitle] = useState("");
 
     const { isOpen, onOpen, onClose } = useDisclosure()
-    const { getProfiles, loading, profiles } = useAllProfiles();
+    const { getProfiles, profiles } = useAllProfiles();
     const { onSelectProfile, selectedProfile } = useSelectProfile();
 
     useEffect(() => getProfiles(), [getProfiles]);
@@ -47,7 +47,6 @@ export const ProfileManagement: FC = memo(() => {
             </Wrap >
 
             <AddProfileButton onClick={() => onClickAddProfileButton(0)}></AddProfileButton>
-
             <ProfileDetailModal isOpen={isOpen} onClose={onClose} isAdmin={false} profile={selectedProfile} title={detailModalTitle} />
         </>
     );

@@ -1,4 +1,4 @@
-import { Wrap, WrapItem, Box, Stack, Image, Text } from "@chakra-ui/react";
+import { Box, Stack, Image, Text } from "@chakra-ui/react";
 import { memo, FC } from "react";
 
 type Props = {

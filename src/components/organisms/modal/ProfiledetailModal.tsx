@@ -18,7 +18,7 @@ import { PrimaryButton } from "../../atoms/button/PrimaryButton";
 import { usePostProfile } from "../../../hooks/usePostProfile";
 
 type Props = {
-    profile: Profile;
+    profile: Profile | undefined;
     isOpen: boolean;
     isAdmin?: boolean;
     onClose: () => void;
@@ -27,7 +27,7 @@ type Props = {
 
 export const ProfileDetailModal: FC<Props> = memo(props => {
 
-    const { isOpen, onClose, isAdmin = true, profile, title } = props;
+    const { isOpen, onClose, profile, title } = props;
     const { postProfile } = usePostProfile();
 
     const [id, setId] = useState<number>(0);
