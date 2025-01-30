@@ -22,7 +22,7 @@
 - **フロントエンドとクラウドの両面を学習**（開発から環境構築まで実践 / クライアント⇔サーバサイドの通信）   
 
 ## デモサイト
-🔗 [Profile Management App]([https://your-aws-deployed-app-url.com](http://profile-mng-app.com/))  
+http://profile-mng-app.com/
 
 ## 学んだこと
 1. **React.js の設計パターン、開発手法**  
